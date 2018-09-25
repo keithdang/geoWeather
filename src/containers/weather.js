@@ -59,7 +59,7 @@ class Weather extends Component {
         )}
         {showWeekly && (
           <td>
-            <Chart data={pressures} color="blue" units="hPa" />
+            <Chart data={pressures} color="blue" units="kPa" />
           </td>
         )}
       </tr>
@@ -68,22 +68,7 @@ class Weather extends Component {
   render() {
     const { showWeekly } = this.state;
     const { location, weather } = this.props;
-    if (weather) {
-      console.log("weather");
-      if (weather[0]) {
-        console.log("weather[0]");
-        if (weather[0][0]) {
-          console.log("weather[0][0]");
-          if (weather[0][0][0]) {
-            console.log("weather[0][0][0]", weather[0][0][0]);
-            if (weather[0][0][0].main) {
-              console.log("weather[0][0][0]", weather[0][0][0].main);
-            }
-          }
-        }
-      }
-    }
-    console.log(weather);
+
     return (
       <div className="container">
         <Button
@@ -110,9 +95,9 @@ class Weather extends Component {
               <th>City</th>
               <th>Temp (C)</th>
               <th>Condition</th>
-              <th>Pressure (hpa)</th>
+              <th>Pressure (kPa)</th>
               {showWeekly && <th className="fiveDayInfo">Temperature (C)</th>}
-              {showWeekly && <th className="fiveDayInfo">Pressure (hPa)</th>}
+              {showWeekly && <th className="fiveDayInfo">Pressure (kPa)</th>}
             </tr>
           </thead>
           <tbody>
