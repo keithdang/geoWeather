@@ -99,7 +99,8 @@ class Weather extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.weather &&
+            {this.props.location &&
+              this.props.weather &&
               this.props.weather[0] &&
               this.props.weather[0].map(this.renderWeatherList)}
           </tbody>

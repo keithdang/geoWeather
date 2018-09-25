@@ -10,7 +10,8 @@ export default ChildComponent => {
     return {
       current: state.current,
       week: state.week,
-      weather: state.weather
+      weather: state.weather,
+      location: state.location
     };
   }
   return connect(mapStateToProps)(ComposedComponent);
