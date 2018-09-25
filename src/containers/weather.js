@@ -67,6 +67,23 @@ class Weather extends Component {
   }
   render() {
     const { showWeekly } = this.state;
+    const { location, weather } = this.props;
+    if (weather) {
+      console.log("weather");
+      if (weather[0]) {
+        console.log("weather[0]");
+        if (weather[0][0]) {
+          console.log("weather[0][0]");
+          if (weather[0][0][0]) {
+            console.log("weather[0][0][0]", weather[0][0][0]);
+            if (weather[0][0][0].main) {
+              console.log("weather[0][0][0]", weather[0][0][0].main);
+            }
+          }
+        }
+      }
+    }
+    console.log(weather);
     return (
       <div className="container">
         <Button
@@ -99,10 +116,13 @@ class Weather extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.location &&
-              this.props.weather &&
-              this.props.weather[0] &&
-              this.props.weather[0].map(this.renderWeatherList)}
+            {location &&
+              weather &&
+              weather[0] &&
+              weather[0][0] &&
+              weather[0][0][0] &&
+              weather[0][0][0].main &&
+              weather[0].map(this.renderWeatherList)}
           </tbody>
         </table>
       </div>
