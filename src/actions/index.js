@@ -35,7 +35,7 @@ export function fetchWeather(current, forecast) {
 }
 export function fetchLocation(latitude, longitude) {
   const res = axios.get(
-    "https://nominatim.openstreetmap.org/reverse?format=json&lat=" +
+    "http://nominatim.openstreetmap.org/reverse?format=json&lat=" +
       latitude +
       "&lon=" +
       longitude +
